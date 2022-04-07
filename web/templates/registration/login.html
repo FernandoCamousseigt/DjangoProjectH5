@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+
+<!-- Este bloque comentado ocupa el modelo de formulario antiguo. Se deja para efectos de comparación -->
+<!-- <form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+<div>
+  <td>{{ form.username.label_tag }}</td>
+  <td>{{ form.username }}</td>
+</div>
+<div>
+  <td>{{ form.password.label_tag }}</td>
+  <td>{{ form.password }}</td>
+</div>
+
+<div>
+  <input type="submit" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</div>
+</form> -->
+
+<!-- {# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
+
+<!-- A partir de acá, FORMULARIO NUEVO con la rutina de autenticación-->
+<div class="container">
+
+  <div class="col-12 col-md-6 offset-0 offset-md-3 mt-4 mb-4">
+    <h3 class="text-center">
+      Iniciar sesión
+    </h3>
+
+    <div>
+
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+            {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</p>
+            {% else %}
+            <p>Por favor inicia sesión para ver esta página | Please login to see this page.</p>
+            {% endif %}
+        {% endif %}
+
+        <div class="mb-3 text-center">
+          <label for="{{ form.username.id_for_label }}" class="form-label">
+            {{ form.username.label_tag }}
+          </label>
+          <div>
+            {{ form.username }}
+          </div>
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="{{ form.password.id_for_label }}" class="form-label">
+            {{ form.password.label_tag }}
+          </label>
+          <div>
+            {{ form.password }}
+          </div>
+        </div>
+
+        <div class="text-center">
+          <input type="submit" value="Iniciar sesión" class="btn btn-primary">
+          <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

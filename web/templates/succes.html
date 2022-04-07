@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="container">
+
+    <div class="col-12 text-center m-3 fw-light">
+        <div class="row">
+        <h4>Su mensaje ha sido enviado correctamente</h4>
+        <i class="far fa-paper-plane"></i>
+        
+        <div class="text-center m-2">
+            <a href="{% url 'indice' %}" class="btn btn-outline-secondary">
+                Volver al inicio</a>
+        </div>
+        </div>
+    </div>         
+</div>
+{% endblock %}

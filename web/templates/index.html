@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block 'content' %}
+    <div class="container pt-3">
+        <div class="fw-normal mt-2 mb-3">
+            <h4>Los mejores flanes</h4> <h5 class="fw-normal text-secondary">Prueba nuestra deliciosa carta</h5>
+            </div>
+        <div class="row">
+            {% for flan in public_flans %}
+            <div class="container col-6 col-md-4 col-lg-3 mt-2">
+                <img class="card-img-top h-50" src="{{ flan.image_url }}" alt="Card image cap">
+                <div class="card h-70 p-1 pb-0 bg-light">
+                <h5 class="card-title text-sm-start fw-bold">{{ flan.name }}</h5>
+                <div class="card-body ps-0 px-1 py-2">
+                    <p class="card-text">{{ flan.description }}</p>
+                    <hr class="dropdown-divider">
+                    <ul class="list-inline text-end card-text">
+                        
+                        <li class="list-inline-item text-secondary h6 ps-2">{{ flan.price }}</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
+

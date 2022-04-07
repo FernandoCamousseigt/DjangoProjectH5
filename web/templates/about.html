@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block 'content' %}
+    <div class="container bg-dark">
+        {% load static %}
+
+         <!-- seccion quienes somos Mobile-->
+        <div class="card bg-dark col-12 text-dark d-sm-inline-flex d-lg-none">
+            <img class="card-img col-12 align-content-end" src="{% static 'produccion.jpg' %}" alt="Card image">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Acerca de Nosotros</h5>
+              <h6 class="card-text col-6">Somos una empresa familiar, apasionados por los flanes. Cada día estamos innovando para ti, creando nuevos postres para sorprenderte.
+                Pensamos que cualquier día mejora con un rico flan. <br> Haz la prueba.</h6>
+            </div>
+          </div>
+
+         <!-- seccion quienes somos Escritorio-->
+          <section class="row mx-2 mb-3 py-2 d-none d-lg-inline-flex" id="presentacion" data-bs-spy="scroll"
+          data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+         
+          <h2 class="subtitulos text-center text-light display-6 fw-normal my-3">Acerca de Nosotros</h2>
+      
+          <div class="row bg-dark">
+            <!-- columna 1 -->
+          <article class="px-0 col-6 bg-dark text-light">
+            
+            <div class="m-2 p-3">
+              <div class="mt-2"> <h2 class="fw-light text-center">Somos una empresa familiar, apasionados por los flanes. <br><br> Cada día estamos innovando para ti, creando nuevos postres para sorprenderte.
+                <br>Pensamos que cualquier día mejora con un rico flan.</br> <br>Haz la prueba!</h2>
+              
+              </div>
+            </div>
+          </article>
+        <!-- columna 2 -->
+          <article class="px-0 col-6">
+            
+            <div class="m-2 p-3 text-center">
+              <img class="w-75" src="{% static 'produccion.jpg' %}" alt="imagen">
+            </div>
+          </article>
+      
+          </div>
+
+        </div>
+        
+
+    {% endblock %}
+</body>
+</html>
