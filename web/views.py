@@ -35,6 +35,7 @@ def contacto(request):
 def exito(request):
     return render(request, 'succes.html', {})
 
+@login_required
 def sin_azucar(request):
     diet_flans = Flan.objects.filter(is_diet=True)
     return render(request, 'selec_zero.html', {'diet_flans': diet_flans})
