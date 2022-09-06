@@ -1,4 +1,4 @@
-#DjangoProjectH5
+#DjangoProjectH5 fue creado con la developer Danic-bit
 # Web disponible en: <a href="https://proyectodjangoflans.pythonanywhere.com" rel="nofollow">https://proyectodjangoflans.pythonanywhere.com</a>
 
 El proyecto consiste en una app web creada con Django, donde se muestra un producto (flanes).
