@@ -6,4 +6,5 @@ Se permite el inicio y cierre de sesión a usuarios previamente registrados por 
 Se otorga un acceso a contenido exclusivo a tales usuarios.
 
 usuario: clientevip
-,contrasenia: AlejandroLara0008
+
+contrasenia: AlejandroLara0008
